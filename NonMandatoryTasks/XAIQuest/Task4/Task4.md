@@ -2,11 +2,11 @@
 
 ## Robustness Evaluation on CIFAR-10
 
-This project evaluates the robustness of CNN models (ResNet18, EfficientNet-B0, VGG16) under various input perturbations and interventions.
+This task solution evaluates the robustness of Custom CNN model  under various input perturbations and interventions.
 
 ### Data Corruption Experiments
 
-We evaluated models under several common corruption types at different severity levels. The following results summarize the accuracy observed:
+I evaluated models under several common corruption types at different severity levels. The following results summarize the accuracy observed:
 
 | Corruption Type | Severity / Level | Accuracy |
 | --------------- | ---------------- | -------- |
@@ -28,7 +28,7 @@ We evaluated models under several common corruption types at different severity 
 
 ### Input Interventions
 
-We applied three types of test-time interventions on the images and measured model performance:
+I applied three types of test-time interventions on the images and measured model performance:
 
 | Intervention | Accuracy |
 | ------------ | -------- |
@@ -44,7 +44,7 @@ We applied three types of test-time interventions on the images and measured mod
 
 ### Mixup / CutMix Augmentation Comparison
 
-We trained additional versions of the models with Mixup and CutMix augmentations to evaluate their effect on robustness:
+I trained additional versions of the models with Mixup and CutMix augmentations to evaluate their effect on robustness:
 
 * **Mixup:** Combines pairs of images and their labels linearly. Provides smoother decision boundaries.
 * **CutMix:** Replaces random patches in an image with patches from another image and adjusts labels proportionally.
@@ -72,8 +72,8 @@ We visualized intermediate feature maps at different convolutional layers to und
 ### Patch Insertion
 
 * Location: Top-left corner (0,0)  
-* Size: 5×5 pixels  
-* Color: Red (RGB: 1.0,0,0 normalized)  
+* Size: 15×15 pixels  
+* Color: (RGB: 69,69.69 )  
 * Accuracy: 0.8265  
 * Interpretation: The model can latch onto localized cues but is not fully dominated by the patch.
 
@@ -106,5 +106,3 @@ We visualized intermediate feature maps at different convolutional layers to und
 * Occluding critical object regions has the strongest impact on model performance.  
 * Feature map analysis confirms the progressive abstraction from edges/textures to high-level semantic features.  
 * Mixup and CutMix augmentations improve robustness by encouraging the network to distribute attention across the object rather than focusing on small local cues.
-
-This evaluation provides a clear picture of how CNNs handle corruption, minor interventions, and how their internal representations evolve across layers.
